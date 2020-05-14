@@ -1,0 +1,11 @@
+Order\Order.class
+Timetable\DaysEnum.class
+Timetable\TimeSlotException.class
+Review\Review.class
+Order\OrderStatusEnum.class
+Timetable\TimeSlot.class
+Timetable\Timetable.class
+Order\ProductEnum.class
+User\User.class
+Order\Product.class
+User\SupplierCompany.class

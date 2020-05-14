@@ -4,6 +4,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This Class is used to display a timetable used by Supplier companies
+ * 
+ * @author catalin.candea
+ *
+ */
 public class Timetable {
 	private Map<DaysEnum, TimeSlot> timetable;
 

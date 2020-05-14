@@ -20,6 +20,8 @@ public class Review {
 		double reviewSum = this.review;
 		if (review > 5)
 			review = 5;
+		if (review < 0)
+			review = 0;
 		reviewSum = reviewSum + review;
 		review_number++;
 		this.review = reviewSum / review_number;
