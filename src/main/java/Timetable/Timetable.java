@@ -1,31 +1,35 @@
 package Timetable;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class Timetable {
-	private HashMap<Days,TimeSlot> timetable;
-	TimeSlot closed = new TimeSlot(0,0);
-	public Timetable(TimeSlot TimeSlot) {
-		timetable.put(Days.MONDAY, TimeSlot);
-		timetable.put(Days.TUESDAY, TimeSlot);
-		timetable.put(Days.WEDNESDAY, TimeSlot);
-		timetable.put(Days.THURSDAY, TimeSlot);
-		timetable.put(Days.FRIDAY, TimeSlot);
-		timetable.put(Days.SATURDAY,closed);
-		timetable.put(Days.SUNDAY, closed);
+	private Map<DaysEnum, TimeSlot> timetable;
 
+	public Timetable(TimeSlot TimeSlot) {
+		timetable = new LinkedHashMap<DaysEnum, TimeSlot>();
+		timetable.put(DaysEnum.MONDAY, TimeSlot);
+		timetable.put(DaysEnum.TUESDAY, TimeSlot);
+		timetable.put(DaysEnum.WEDNESDAY, TimeSlot);
+		timetable.put(DaysEnum.THURSDAY, TimeSlot);
+		timetable.put(DaysEnum.FRIDAY, TimeSlot);
+		timetable.put(DaysEnum.SATURDAY, TimeSlot);
+		timetable.put(DaysEnum.SUNDAY, TimeSlot);
 	}
+
+	@Override
 	public String toString() {
-		String return_value = "";
-		
-		Set<Days> DaysSet = timetable.keySet();
-		for(Days day:DaysSet) {
-			return_value = return_value + day + " : " + timetable.get(day) + "\n";
+		String returnValue = "";
+
+		Set<DaysEnum> DaysSet = timetable.keySet();
+		for (DaysEnum day : DaysSet) {
+			returnValue = returnValue + day + " : " + timetable.get(day).toString() + "\n";
 		}
-		return return_value;
+		return returnValue;
 	}
-	public void modify_timetable(TimeSlot timeslot, Days day) {
-		timetable.replace(day,timeslot);
+
+	public void modifyTimetable(TimeSlot timeslot, DaysEnum day) {
+		timetable.replace(day, timeslot);
 	}
 }

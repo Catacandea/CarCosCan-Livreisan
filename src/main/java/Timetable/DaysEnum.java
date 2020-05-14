@@ -1,6 +1,6 @@
 package Timetable;
 
-public enum Days {
+public enum DaysEnum {
 	SUNDAY,
 	MONDAY,
 	TUESDAY,

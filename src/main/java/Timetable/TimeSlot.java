@@ -1,36 +1,59 @@
 package Timetable;
 
+/**
+ * The TimeSlot is used to keep the Time interval for each day from the
+ * Timetable
+ * 
+ * @author catalin.candea
+ *
+ */
 public class TimeSlot {
 	private int from;
 	private int to;
 	private boolean status;
-	public TimeSlot(int from, int to) {
+
+	public TimeSlot(int from, int to) throws TimeSlotException {
+		if (from > 24 || to > 24) {
+			throw new TimeSlotException("Hour must be between 0 and 24");
+		}
 		this.from = from;
 		this.to = to;
-		if( from == to) {
+		if (from == to)
 			status = false;
-		}else
+		else
 			status = true;
 	}
+
 	public int getFrom() {
 		return from;
 	}
-	public void setFrom(int from) {
+
+	public void setFrom(int from) throws TimeSlotException {
+		if (from > 24) {
+			throw new TimeSlotException("Hour must be between 0 and 24");
+		}
 		this.from = from;
 	}
+
 	public int getTo() {
 		return to;
 	}
-	public void setTo(int to) {
+
+	public void setTo(int to) throws TimeSlotException {
+		if (from > 24) {
+			throw new TimeSlotException("Hour must be between 0 and 24");
+		}
 		this.to = to;
 	}
+
+	@Override
 	public String toString() {
-		String return_value ="";
-		if(status == true)
-		{	return_value = return_value + from +":00 - " + to + ":00"; 
-		}else {
-			return_value = "CLOSED";
+		String returnValue = "";
+		if (status == true) {
+			returnValue = returnValue + from + ":00 - " + to + ":00";
+		} else {
+			returnValue = "CLOSED";
 		}
-		 return return_value;
+		return returnValue;
 	}
 }
