@@ -1,22 +1,23 @@
 package User;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import Order.Product;
+import Timetable.DaysEnum;
 import Timetable.TimeSlot;
 import Timetable.TimeSlotException;
 import Timetable.Timetable;
 
 public class SupplierCompany extends User {
 	private Timetable timetable;
-	private String phoneNumber, address;
+	private String address;
 	private ArrayList<Product> products;
 
-	public SupplierCompany(String username, int to, int from, String phoneNumber, String address)
+	public SupplierCompany(String username, int to, int from, String phoneNumber, String address, URL email)
 			throws TimeSlotException {
-		super(username);
+		super(username, address, email);
 		timetable = new Timetable(new TimeSlot(to, from));
-		this.phoneNumber = phoneNumber;
 		this.address = address;
 		products = new ArrayList<Product>();
 	}
@@ -27,14 +28,6 @@ public class SupplierCompany extends User {
 
 	public void setTimetable(Timetable timetable) {
 		this.timetable = timetable;
-	}
-
-	public String getPhoneNumber() {
-		return this.phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
 	}
 
 	public String getAddress() {
@@ -64,6 +57,11 @@ public class SupplierCompany extends User {
 				products.remove(product);
 			}
 		}
+	}
+
+	public void modifyTimetable(TimeSlot timeslot, DaysEnum day) {
+		timetable.modifyTimetable(timeslot, day);
+
 	}
 
 	@Override
