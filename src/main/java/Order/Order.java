@@ -77,7 +77,7 @@ public class Order {
 	}
 
 	public Order getOrder(User delivery) {
-		this.delivery = delivery;
+		this.setDelivery(delivery);
 		this.setStatus(OrderStatusEnum.IN_PROGRESS);
 		return this;
 	}
@@ -101,6 +101,7 @@ public class Order {
 		for (Product products : productList) {
 			returnValue += products.getName();
 		}
+		returnValue += "\n";
 		return returnValue;
 	}
 }
