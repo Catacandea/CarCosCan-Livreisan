@@ -27,6 +27,10 @@ public class DeliveryCompany extends User {
 		return this.order;
 	}
 
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
 	public String viewOrders(ArrayList<Order> orders) {
 		String returnValue = "";
 		for (Order auxOrder : orders) {

@@ -2,7 +2,8 @@ package Order;
 
 import java.util.ArrayList;
 
-import User.User;
+import User.Customer;
+import User.DeliveryCompany;
 
 /**
  * The Order class is used to manage a set of products. Also is used to store
@@ -12,8 +13,8 @@ import User.User;
  *
  */
 public class Order {
-	private User customer;
-	private User delivery;
+	private Customer customer;
+	private DeliveryCompany delivery;
 	private OrderStatusEnum status;
 	private ArrayList<Product> productList;
 	private double price;
@@ -28,7 +29,7 @@ public class Order {
 	 * @param delivery
 	 * @param customer
 	 */
-	public Order(User delivery, User customer) {
+	public Order(DeliveryCompany delivery, Customer customer) {
 		this.customer = customer;
 		this.delivery = delivery;
 		this.status = OrderStatusEnum.PENDING;
@@ -44,19 +45,19 @@ public class Order {
 		price = price + newProduct.getPrice();
 	}
 
-	public User getCustomer() {
+	public Customer getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(User customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 
-	public User getDelivery() {
+	public DeliveryCompany getDelivery() {
 		return delivery;
 	}
 
-	public void setDelivery(User delivery) {
+	public void setDelivery(DeliveryCompany delivery) {
 		this.delivery = delivery;
 	}
 
@@ -76,7 +77,7 @@ public class Order {
 		this.price = price;
 	}
 
-	public Order getOrder(User delivery) {
+	public Order getOrder(DeliveryCompany delivery) {
 		this.setDelivery(delivery);
 		this.setStatus(OrderStatusEnum.IN_PROGRESS);
 		return this;
