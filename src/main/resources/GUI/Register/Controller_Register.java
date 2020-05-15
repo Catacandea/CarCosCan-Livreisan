@@ -1,51 +1,15 @@
-package GUI;
+package GUI.Register;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
-public class Controller {
-
-    public void aboutIt(){
-       System.out.println("About it...");
-    }
-
-    public void SignInButtonClicked(ActionEvent event) throws IOException {
-        Parent SignInView = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-        Scene SignInViewScene = new Scene(SignInView);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(SignInViewScene);
-        window.show();
-    }
-
-
-    public void RegisterButoonClicked(ActionEvent event) throws IOException
-    {
-        Parent RegisterView = FXMLLoader.load(getClass().getResource("Register.fxml"));
-        Scene RegisterScene = new Scene(RegisterView);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(RegisterScene);
-        window.show();
-    }
-
-    public void AboutItButoonClicked(ActionEvent event) throws IOException
-    {
-        Parent AboutItView = FXMLLoader.load(getClass().getResource("AboutIt.fxml"));
-        Scene AboutItScene = new Scene(AboutItView);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(AboutItScene);
-        window.show();
-    }
+public class Controller_Register {
 
     public void BackHomeViewButoonClicked(ActionEvent event) throws IOException
     {
@@ -124,30 +88,4 @@ public class Controller {
         window.setScene(DeliveryHomePageScene);
         window.show();
     }
-
-
-    public void LogOutButtonClicked(ActionEvent event) throws IOException {
-        Parent LogOutView = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        Scene LogOutScene = new Scene(LogOutView);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //window.setScene(LogOutScene);
-        //window.show();
-        window.close();
-    }
-
-//    public void Register_Customer()
-//    {
-//        System.out.println("Register Customer");
-//    }
-//
-//    public void Register_Supply()
-//    {
-//        System.out.println("Register Supply Company");
-//    }
-//
-//    public void Register_Delivery()
-//    {
-//        System.out.println("Register Delivery Company");
-//    }
 }
