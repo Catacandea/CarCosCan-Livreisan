@@ -15,7 +15,7 @@ public class DiskDB {
 
 	public ArrayList<Product> getProductsfromDisk() {
 		ObjectMapper objectMapper = new ObjectMapper();
-
+		products = objectMapper.readValue(new File("src/test/resources/json_car.json"), products);
 		return products;
 	}
 
