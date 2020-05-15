@@ -15,6 +15,13 @@ public class Product {
 	private ProductEnum type;
 	private double price;
 
+	/**
+	 * 
+	 * @param name
+	 * @param provider
+	 * @param type
+	 * @param price
+	 */
 	public Product(String name, User provider, ProductEnum type, double price) {
 		this.name = name;
 		this.provider = provider;
@@ -52,6 +59,13 @@ public class Product {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		String returnValue = null;
+		returnValue = this.getName() + ", Pret :" + this.price;
+		return returnValue;
 	}
 
 }

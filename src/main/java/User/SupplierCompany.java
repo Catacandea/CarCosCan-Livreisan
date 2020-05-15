@@ -1,6 +1,5 @@
 package User;
 
-import java.net.URL;
 import java.util.ArrayList;
 
 import Order.Product;
@@ -14,9 +13,19 @@ public class SupplierCompany extends User {
 	private String address;
 	private ArrayList<Product> products;
 
-	public SupplierCompany(String username, int to, int from, String phoneNumber, String address, URL email)
+	/**
+	 * 
+	 * @param username
+	 * @param toHour
+	 * @param fromHour
+	 * @param phoneNumber
+	 * @param address
+	 * @param email
+	 * @throws TimeSlotException
+	 */
+	public SupplierCompany(String username, int to, int from, String phoneNumber, String address, String email)
 			throws TimeSlotException {
-		super(username, address, email);
+		super(username, phoneNumber, email);
 		timetable = new Timetable(new TimeSlot(to, from));
 		this.address = address;
 		products = new ArrayList<Product>();
@@ -43,7 +52,7 @@ public class SupplierCompany extends User {
 	}
 
 	public String showProducts() {
-		String returnValue = "Products of Company:" + this.getUsername();
+		String returnValue = "Products of Company " + this.getUsername() + ": ";
 		for (Product product : products) {
 			returnValue = returnValue + product.toString() + ", ";
 		}
@@ -68,8 +77,7 @@ public class SupplierCompany extends User {
 	public String toString() {
 		String returnValue = "Company : ";
 		returnValue = returnValue + this.getUsername() + ", Phone number : " + this.getPhoneNumber() + ", Address: "
-				+ this.getAddress();
+				+ this.getAddress() + ",email : " + this.getEmail() + "\n";
 		return returnValue;
-
 	}
 }

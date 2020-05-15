@@ -1,29 +1,27 @@
 package User;
 
-import java.net.URL;
-
 import Review.Review;
 
 abstract public class User {
 
 	private String username;
 	private Review review;
-	private URL email;
+	private String email;
 
 	private String phoneNumber;
 
-	public User(String username, String phoneNumber, URL email) {
+	public User(String username, String phoneNumber, String email2) {
 		this.username = username;
-		this.email = email;
+		this.email = email2;
 		this.phoneNumber = phoneNumber;
 		review = new Review();
 	}
 
-	public URL getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(URL email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
@@ -52,4 +50,5 @@ abstract public class User {
 	public void setUsername(String newUsername) {
 		this.username = newUsername;
 	}
+
 }
