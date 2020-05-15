@@ -2,6 +2,13 @@ package User;
 
 import Review.Review;
 
+/**
+ * User is an abstract class implemented so that all the users that have common
+ * arguments and method will inherit
+ * 
+ * @author catalin.candea
+ *
+ */
 abstract public class User {
 
 	private String username;
@@ -10,6 +17,12 @@ abstract public class User {
 
 	private String phoneNumber;
 
+	/**
+	 * 
+	 * @param username
+	 * @param phoneNumber
+	 * @param email2
+	 */
 	public User(String username, String phoneNumber, String email2) {
 		this.username = username;
 		this.email = email2;

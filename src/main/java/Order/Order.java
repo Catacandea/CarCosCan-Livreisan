@@ -28,7 +28,7 @@ public class Order {
 	 * @param delivery
 	 * @param customer
 	 */
-	public Order(User client, User delivery, User customer) {
+	public Order(User delivery, User customer) {
 		this.customer = customer;
 		this.delivery = delivery;
 		this.status = OrderStatusEnum.PENDING;

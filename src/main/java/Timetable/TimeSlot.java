@@ -12,6 +12,12 @@ public class TimeSlot {
 	private int to;
 	private boolean status;
 
+	/**
+	 * 
+	 * @param from
+	 * @param to
+	 * @throws TimeSlotException
+	 */
 	public TimeSlot(int from, int to) throws TimeSlotException {
 		if (from > 24 || to > 24) {
 			throw new TimeSlotException("Hour must be between 0 and 24");

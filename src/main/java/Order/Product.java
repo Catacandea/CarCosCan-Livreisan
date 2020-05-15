@@ -68,4 +68,12 @@ public class Product {
 		return returnValue;
 	}
 
+	public boolean equals(String name) {
+		boolean returnValue = false;
+		if (this.name.contentEquals(name))
+			returnValue = true;
+		return returnValue;
+
+	}
+
 }

@@ -49,6 +49,7 @@ public class SupplierCompany extends User {
 
 	public void addProduct(Product newProduct) {
 		products.add(newProduct);
+		newProduct.setProvider(this);
 	}
 
 	public String showProducts() {

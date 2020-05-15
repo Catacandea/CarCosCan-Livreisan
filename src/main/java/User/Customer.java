@@ -1,10 +1,8 @@
 package User;
 
-import java.net.URL;
-
 public class Customer extends User {
 
-	public Customer(String username, String phoneNumber, URL email) {
+	public Customer(String username, String phoneNumber, String email) {
 		super(username, username, email);
 	}
 

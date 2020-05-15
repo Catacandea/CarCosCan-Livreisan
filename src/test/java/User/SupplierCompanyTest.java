@@ -44,4 +44,18 @@ public class SupplierCompanyTest {
 		assertEquals(expected, output);
 
 	}
+
+	@Test
+	public void testDeleteProduct() throws TimeSlotException {
+		SupplierCompany test = new SupplierCompany("Dedeman", 10, 20, "0730497867", "Str. Mihai Eminescu, no. 10",
+				"dedeman@yahoo.com");
+		Product product = new Product("Autofiletanta", test, ProductEnum.CLOTHING, 600);
+		test.addProduct(product);
+		test.addProduct(new Product("Bormasina", test, ProductEnum.DRUGS, 300));
+		test.deleteProduct("Autofiletanta");
+		String output = test.showProducts();
+		String expected = "Products of Company " + "Dedeman:" + " Bormasina, Pret :300.0, \n";
+		assertEquals(expected, output);
+
+	}
 }

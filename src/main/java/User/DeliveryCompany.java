@@ -1,6 +1,5 @@
 package User;
 
-import java.net.URL;
 import java.util.ArrayList;
 
 import Order.Order;
@@ -10,7 +9,13 @@ public class DeliveryCompany extends User {
 	private String phoneNumber;
 	private Order order;
 
-	public DeliveryCompany(String username, URL email, String phoneNumber) {
+	/**
+	 * 
+	 * @param username
+	 * @param email
+	 * @param phoneNumber
+	 */
+	public DeliveryCompany(String username, String email, String phoneNumber) {
 		super(username, phoneNumber, email);
 	}
 
@@ -18,14 +23,16 @@ public class DeliveryCompany extends User {
 		order = wanted.getOrder(this);
 	}
 
-	public void getOrder() {
-		order.toString();
+	public Order getOrder() {
+		return this.order;
 	}
 
-	public void viewOrders(ArrayList<Order> orders) {
+	public String viewOrders(ArrayList<Order> orders) {
+		String returnValue = "";
 		for (Order auxOrder : orders) {
-			auxOrder.toString();
+			returnValue += auxOrder.toString();
 		}
+		return returnValue;
 	}
 
 	public void finishOrder(int mark) {

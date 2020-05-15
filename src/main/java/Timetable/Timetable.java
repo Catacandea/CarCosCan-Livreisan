@@ -13,6 +13,10 @@ import java.util.Set;
 public class Timetable {
 	private Map<DaysEnum, TimeSlot> timetable;
 
+	/**
+	 * 
+	 * @param TimeSlot
+	 */
 	public Timetable(TimeSlot TimeSlot) {
 		timetable = new LinkedHashMap<DaysEnum, TimeSlot>();
 		timetable.put(DaysEnum.MONDAY, TimeSlot);
